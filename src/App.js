@@ -33,7 +33,6 @@ const App = () => {
       setPassword(createPassword(characterList))
       notify("Password is generated successfully", false)
     }
-
   }
   
   const createPassword = (characterList) => {
@@ -43,7 +42,6 @@ const App = () => {
       const characterIndex = Math.round(Math.random() * characterListLength)
       password = password + characterList.charAt(characterIndex)
     }
-    
     return password
   }
   
@@ -75,7 +73,6 @@ const App = () => {
         progress: undefined,
       });
     }
-
   }
   
   const handleCopyPassword = (e) => {
@@ -86,7 +83,6 @@ const App = () => {
       copyToClipboard(password)
       notify(COPY_SUCCESS)
     }
-
   }
 
   return (
