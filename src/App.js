@@ -34,8 +34,8 @@ const App = () => {
       notify("Password is generated successfully", false)
     }
 
-
   }
+  
   const createPassword = (characterList) => {
     let password = ""
     const characterListLength = characterList.length
@@ -43,12 +43,14 @@ const App = () => {
       const characterIndex = Math.round(Math.random() * characterListLength)
       password = password + characterList.charAt(characterIndex)
     }
+    
     return password
   }
+  
   const copyToClipboard = (password) => {
-
     navigator.clipboard.writeText(password)
   }
+  
   const notify = (message, hasError = false) => {
     if (hasError) {
       toast.error(message, {
@@ -61,6 +63,7 @@ const App = () => {
         progress: undefined,
       });
     }
+    
     else {
       toast(message, {
         position: "top-center",
@@ -74,6 +77,7 @@ const App = () => {
     }
 
   }
+  
   const handleCopyPassword = (e) => {
     if (password === "") {
       notify(COPY_Fail, true)
